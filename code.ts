@@ -66,3 +66,40 @@ figma.ui.onmessage = async(pluginMessage) => {
 	});
 
 };
+
+/* NEXT STEPS 
+   Get external library assets from LD/PX libraries
+
+// Function to fetch component data from the external library using Figma API
+function getLibraryComponents(libraryId) {
+	// Use Figma API to retrieve components from the library
+	// ... 
+	return libraryComponents;
+}
+
+// Function to find instances within the current design
+function findInstances() {
+	const libraryComponents = getLibraryComponents(selectedLibraryId); // Get library data
+	const page = figma.currentPage;
+	for (let layer of page.children) {
+		if (isInstanceFromLibrary(layer, libraryComponents)) {
+				// Add this layer to a list of instances 
+		}
+		// Recursively check child layers
+	}
+}
+
+// Helper function to check if a layer is an instance of a library component
+function isInstanceFromLibrary(layer, libraryComponents) {
+	// Compare layer properties with library components to identify a match
+	// ... 
+	return matchFound;
+}
+
+// Event handler for "Find Instances" button click
+figma.ui.on('click', 'findInstancesButton', () => {
+	findInstances();
+	// Update UI to display the list of found instances
+});
+
+*/
