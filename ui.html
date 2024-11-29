@@ -6980,61 +6980,102 @@
 		}
 	}
 </style>
-<!--
-<link
-	rel="stylesheet"
-	href="https://cdn.jsdelivr.net/gh/thomas-lowry/figma-plugin-ds/dist/figma-plugin-ds.css"
-/>
--->
+<!-- Custom styles (loaded after Tachyons) -->
+<style>
+	@font-face {
+		font-family: "BogleWeb";
+		src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130596/BogleWeb-Regular.woff2")
+				format("woff2"),
+			url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130596/BogleWeb-Regular.woff")
+				format("woff");
+	}
+	@font-face {
+		font-family: "BogleWeb-Bold";
+		src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130596/BogleWeb-Bold.woff2")
+				format("woff2"),
+			url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/130596/BogleWeb-Bold.woff")
+				format("woff");
+	}
+	.wrapper {
+		width: 100%;
+		color: #2e2f32;
+		/* background-color: #f9f9f9; */
+		font-family: Bogle, BogleWeb, Helvetica, Verdana, "Trebuchet MS", sans-serif;
+	}
+	.blue {
+		color: #0073e4;
+	}
+	.bg-blue {
+		background-color: #0073e4;
+	}
+	.b {
+		font-family: BogleWeb-Bold;
+	}
+</style>
 
-<div class="pv2 ph4 sans-serif">
-	<h1 class="f3">Petma plugin</h1>
+<div class="pv3 ph5 sans-serif h-100 vh-100 wrapper">
+	<h1 class="f3 b">Petma plugin</h1>
 
-	<div style="width: 300px">
-		<label class="db f6 mb1" for="username">Username</label>
-		<input class="w-100 mb3 pa2 ba bw1 b--black-80 br2 f6" type="text" id="username" />
+	<div>
+		<label class="db f5 mb1" for="username">Username</label>
+		<input
+			class="w-100 mb3 pa2 ba ba b--black-80 br2 f5"
+			type="text"
+			placeholder="Your username"
+			id="username"
+		/>
 
-		<label class="db f6 mb1" for="name">Name</label>
-		<input class="w-100 mb3 pa2 ba bw1 b--black-80 br2 f6" type="text" id="name" />
+		<label class="db f5 mb1" for="name">Name</label>
+		<input
+			class="w-100 mb3 pa2 ba ba b--black-80 br2 f5"
+			type="text"
+			placeholder="Your name"
+			id="name"
+		/>
 
-		<label class="db f6 mb1" for="description">Description</label>
+		<label class="db f5 mb1" for="description">Description</label>
 		<textarea
-			class="w-100 mb3 pa2 ba bw1 b--black-80 br2 f6"
+			class="w-100 mb3 pa2 ba ba b--black-80 br2 f5"
 			name="description"
 			id="description"
 			rows="3"
+			placeholder="Add a description"
 		></textarea>
 	</div>
 
 	<div class="mb3">
 		<input type="checkbox" id="dark-mode-on" />
-		<label class="f6" for="dark-mode-on">Dark Mode</label>
+		<label class="f5" for="dark-mode-on">Dark Mode</label>
 	</div>
 
 	<div class="mb3">
 		<div class="mb1">
 			<input id="radioButton1" type="radio" name="radioGroup" value="1" />
-			<label for="radioButton1" class="f6 mb2">No image</label>
+			<label for="radioButton1" class="f5 mb3">No image</label>
 		</div>
 		<div class="mb1">
 			<input id="radioButton2" type="radio" name="radioGroup" value="2" />
-			<label for="radioButton2" class="f6 mb2">Single image</label>
+			<label for="radioButton2" class="f5 mb3">Single image</label>
 		</div>
 		<div class="mb1">
 			<input id="radioButton3" type="radio" name="radioGroup" value="3" />
-			<label for="radioButton3" class="f6 mb2">Carousel</label>
+			<label for="radioButton3" class="f5 mb3">Carousel</label>
 		</div>
 	</div>
 
 	<div>
-		<button class="bn br2 pv2 ph3 bg-blue white f6 b" id="submit-post">Run plugin</button>
+		<p class="mb3 dark-red f6 copy">
+			The plugin will not close when you click the "Run plugin" button. You can change any of
+			your form entries, and click the button again to create a new instance of your component.
+			Close the plugin using the "x" button in the top right of the modal when you're done.
+		</p>
+		<button
+			class="bn br-pill pv3 ph4 bg-blue bg-animate hover-bg-dark-blue white f5 b"
+			id="submit-post"
+		>
+			Run plugin
+		</button>
 	</div>
-
-	<p class="mt4 dark-red f6 copy">
-		You can change any of your form entries, and hit the "Run plugin" button again to create a new
-		instance of your component. Close the plugin using the "x" button in the top right of the
-		modal when you're done.
-	</p>
 </div>
 
 <script>
