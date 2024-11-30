@@ -7024,6 +7024,12 @@
 			placeholder="Your username"
 			id="username"
 		/>
+		<button
+			class="mb3 bn br-pill pv2 ph3 bg-blue bg-animate hover-bg-dark-blue white f6"
+			id="add-field"
+		>
+			Add field
+		</button>
 
 		<label class="db f5 mb1" for="name">Name</label>
 		<input
@@ -7079,6 +7085,14 @@
 </div>
 
 <script>
+	// Create a new element
+	document.getElementById("add-field").onclick = () => {
+		let newElement = document.createElement("p");
+		newElement.textContent = "This is the new element.";
+		let referenceElement = document.getElementById("username");
+		referenceElement.parentNode.insertBefore(newElement, referenceElement.nextSibling);
+	};
+
 	document.getElementById("submit-post").onclick = () => {
 		const username = document.getElementById("username").value;
 		const name = document.getElementById("name").value;
